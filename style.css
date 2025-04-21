@@ -1,38 +1,12 @@
-:root {
-    --color-primary: #eb2f64;
-    --color-primary-light: #FF3366;
-    --color-primary-light-2: #fd578e;
-    --color-primary-dark: #BA265D;
-
-    --color-grey-light-1: #faf9f9;
-    --color-grey-light-2: #f4f2f2;
-    --color-grey-light-3: #f0eeee;
-    --color-grey-light-4: #ccc;
-
-    --color-grey-dark-1: #333;
-    --color-grey-dark-2: #777;
-    --color-grey-dark-3: #999;
-
-    --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
-    --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);
-
-    --line: 1px solid var(--color-grey-light-2);
-    --primary-color-line: 1px solid var(--color-grey-dark-2);
-}
-
-
-
 html {
     box-sizing: border-box;
      font-size: 75%; /* 1 rem = 12px, 12px/16px = 75% */
 }
 
 body {
-    font-family: 'Open Sans', 'sen-serif';
+    font-family: 'Shadows Into Light', cursive;
     font-weight: 400;
     line-height: 1.6;
-    /* color: var(--color-grey-dark-2); */
-     /* background-image: linear-gradient(to right bottom,#fefcf9, #fdf5e6, #f5e3c8); */
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -70,19 +44,21 @@ h5 {
     margin-top: 5px;
 }
 
-/* button {
+.buttons button {
     padding: 10px 15px;
     margin-right: 5px;
     border: none;
-    background-color: #ffd700;
+    background-color: #fff8c6;
+    border: 2px solid #7a4b20; 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s;
 }
 
-button:hover {
-    background-color: #ffc107;
-} */
+.buttons button:hover {
+    background-color: #f0c36d; 
+}
 
 
 .container {
@@ -113,12 +89,12 @@ button:hover {
     flex-direction: column;
     justify-content: center;
 
+    align-self: flex-start;
     margin-right: 10px; 
 }
 .paper {
-    background: repeating-linear-gradient(to bottom,
-            #fff8c6,
-            #fff8c6);
+    font-family: 'Courier New', monospace;
+    background: repeating-linear-gradient(to bottom, #fff8c6, #fff8c6);
     border: 2px solid #ccc;
     padding: 20px;
     width: 400px;
@@ -153,8 +129,6 @@ button:hover {
 }
 
 .notebook {
-    
-    font-family: 'Courier New', monospace;
     font-size: 16px;
     line-height: 26px;
     min-height: 100%;
@@ -171,40 +145,72 @@ button:hover {
 }
 
 .board-task {
-
     background-image: url(../img/cork-light.jpg);
-    border: 2px solid #7a4b20; /* צבע עץ כהה */
+    border: 10px solid #7a4b20;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     flex: 1;
 
-    box-shadow:
-        0 1px 0 #a0522d,
-        0 2px 0 #8b5a2b,
-        0 3px 0 #7a4b20,
-        0 4px 0 #6f3f18,
-        0 5px 0 #5c3310,
-        0 6px 1px rgba(139, 69, 19, 0.1),
-        0 0 5px rgba(139, 69, 19, 0.1),
-        0 1px 3px rgba(139, 69, 19, 0.3),
-        0 3px 5px rgba(139, 69, 19, 0.2),
-        0 5px 10px rgba(139, 69, 19, 0.25),
-        0 10px 10px rgba(139, 69, 19, 0.2),
-        0 20px 20px rgba(139, 69, 19, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.board-title {
+    font-family: 'Courier New', monospace;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
 }
 
-.tasks-list {
+.board-title span {
+    background-color: #fff8c6;
+    padding: 0.7rem 1.5rem;
+    font-size: 3rem;
+    border-radius: 6px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+    color: #2c2c2c;
+    margin-top: 0.3rem;
+}
+.board-title span:nth-child(4) {
+    margin-right: 1rem;
+}
+
+.tasks-list {    
     display: flex;
-    flex-direction: row;
-    justify-content: start;
-    align-items: start;
+    justify-content: center;
+}
+
+.task-container {
+    width: 90%;
+    display: flex;
     flex-wrap: wrap;
-    height: 100%;
+    justify-content: start;
 }
 
 .task-item{
     margin: 5px;
 }
 
+.task-card {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    background-color: #fffef6;
+    border-radius: 10px;
+    
+    animation: fadeIn 0.5s ease-in-out;
+    transition: transform 0.3s ease;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 .card {
     height: 20rem;
@@ -216,15 +222,9 @@ button:hover {
     }
 }
 
-.task-card {
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
-    background-color: #fffef6;
-    border-radius: 10px;
-}
 .pin-icon {
     position: absolute;
-    top: -12px;
+    top: -20px;
     left: 50%;
     transform: translateX(-50%) rotate(-20deg);
     font-size: 24px;
@@ -237,6 +237,11 @@ button:hover {
 }
 
 .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
     height: inherit;
     overflow-y: auto;
 }
@@ -260,6 +265,18 @@ button:hover {
     transition: color 0.3s;
     background-color: transparent;
     border: none;
+}
+.task-content {
+    font-size: 1.2rem;
+    color: #333;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.date-and-time {
+    align-self: flex-start;
+    font-size: 1rem;
+    color: #666;
 }
 
 
