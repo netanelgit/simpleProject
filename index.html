@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+
+    <title>Project &mdash; A</title>
+</head>
+
+<body onload="initialPage()">
+    <div class="container">
+        <header class="header">
+            <h1>My Task Board</h1>
+        </header>
+
+        <div class="content">
+            <div class="form-task paper">
+                <h2>Task Form</h2>
+                <input type="date" id="date" placeholder="Enter Date" required>
+                <input type="time" id="time" placeholder="Enter Time" required>
+                <input type="text" id="task" placeholder="Enter Your name Task" required>
+                <!-- <textarea class="task-content" placeholder="write here Your task"></textarea> -->
+                <div class="notebook-container">
+                    <div class="notebook" contenteditable="true" spellcheck="true" data-placeholder="Write your task here"></div>
+                </div>
+                <div class="buttons">
+                    <button id="saveTaskButton" onclick="addTask()" disabled>Save Task</button>
+                    <button onclick="resetFormTask()">reset form task</button>
+                </div>
+            </div>
+
+            <div class="board-task">
+                <h2>Task Board</h2>
+                <div class="tasks-list" id="tasks-list">
+                    <!-- Task items will be here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
+
