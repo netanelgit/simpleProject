@@ -154,6 +154,10 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media only screen and (max-width: 768px) {
+        min-height: 220px;
+    }
 }
 .board-title {
     font-family: 'Courier New', monospace;
@@ -172,7 +176,7 @@ h2 {
     margin-top: 0.3rem;
 
     @media only screen and (max-width: 768px) {
-        font-size: 1rem;
+        font-size: 1.2rem;
         padding: 0.1rem 0.5rem;
     }
 }
