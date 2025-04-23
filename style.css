@@ -73,6 +73,17 @@ h2 {
     min-height: 700px;
 }
 
+@media only screen and (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+    .form-task.paper{
+        margin-bottom: 20px;
+        align-self: center;
+    }
+    
+}
+
 .form-task {
     display: flex;
     flex-direction: column;
@@ -134,7 +145,7 @@ h2 {
 }
 
 .board-task {
-    background-image: url(../img/cork-light.jpg);
+    background-image: url(https://github.com/netanelgit/simpleProject/blob/main/img/cork-light.jpg?raw=true);
     border: 10px solid #7a4b20;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
