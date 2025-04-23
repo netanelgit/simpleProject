@@ -4,8 +4,7 @@ html {
 }
 
 body {
-    background: #FFEFBA;  /* fallback for old browsers */
-    /* background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA);  */
+    background: #FFEFBA; 
     background: linear-gradient(to right, #fbfae1, #FFEFBA); 
     font-family: 'Shadows Into Light', cursive;
     font-weight: 400;
@@ -13,12 +12,19 @@ body {
     min-height: 100vh;
 }
 
+label {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 0 0 0.2rem 1.25rem;
+
+}
+
 input {
     display: block;
     width: calc(100% - 30px);
-    margin: 0 auto 15px auto;
+    margin: 0 auto 1.25rem 1rem;
     padding: 10px;
-    font-size: 16px;
+    font-size: 1.3rem;
     border: 1px solid #aaa;
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.7);
@@ -56,6 +62,10 @@ h2 {
 .container {
     max-width: 140rem;
     margin: 8rem auto;
+
+    @media only screen and (max-width: 768px) {
+        margin: 1rem auto;
+    }
 }
 
 .header {
