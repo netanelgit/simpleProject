@@ -1,5 +1,5 @@
 function initialPage() {
-    // console.log("onLoad function executed");
+
     const tasks = JSON.parse(localStorage.getItem("tasks"));
     const taskContainer = document.querySelector(".task-container");
 
@@ -66,6 +66,7 @@ function addTask() {
     taskElement.classList.add("task-item");
     const formattedDate = task.taskDate.split("-").reverse().join("/");
 
+    // I used a Bootstrap card here with its class (and more of my class)
     const innerHTML = `<div class="card task-card" style="width: 22rem; position: relative;">
                             <div class="pin-icon">
                                 <i class="bi bi-pin-angle-fill text-primary"></i>
@@ -111,28 +112,27 @@ function addTask() {
 }
 
 function resetFormTask() {
-  document.getElementById("task").value = "";
-  document.querySelector(".notebook").innerText = "";
-  document.getElementById("date").value = "";
-  document.getElementById("time").value = "";
+
+    document.getElementById("task").value = "";
+    document.querySelector(".notebook").innerText = "";
+    document.getElementById("date").value = "";
+    document.getElementById("time").value = "";
+
 }
 
 function deleteTask(taskId) {
     const taskContainer = document.querySelector(".task-container");
     const taskElement = taskContainer.querySelector(`[id='${taskId}']`);
-    console.log(taskId);
-
     taskContainer.removeChild(taskElement);
 
     let tasks = JSON.parse(localStorage.getItem("tasks"));
-    console.log(tasks.length);
     tasks = tasks.filter((task) => task.taskId !== taskId);
     localStorage.removeItem("tasks");
     localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
 function completeTask(taskId) {
-
+    // update task status in local storage
     let tasks = JSON.parse(localStorage.getItem("tasks"));
     let task = {};
     tasks.forEach((T) => {
@@ -144,7 +144,7 @@ function completeTask(taskId) {
     localStorage.setItem("tasks", JSON.stringify(tasks));
 
     const taskContainer = document.querySelector(".task-container");
-    const taskElement = taskContainer.querySelector(`[id='${taskId}']`); // CHECK
+    const taskElement = taskContainer.querySelector(`[id='${taskId}']`); 
     const statusIcon =
         taskElement.querySelector(".bi-flag-fill") ||
         taskElement.querySelector(".bi-check-circle-fill");
@@ -155,13 +155,12 @@ function completeTask(taskId) {
         statusIcon.classList.add("bi-check-circle-fill", "text-success");
         statusIcon.title = "completed";
     }
-    // else if (task.taskStatus === 0) {
+    // if (task.taskStatus === 0) than:  
     else {
         statusIcon.classList.remove("bi-check-circle-fill", "text-success");
         statusIcon.classList.add("bi-flag-fill", "text-danger");
         statusIcon.title = "pending";
-    }
-    
+    }  
 }
 
 // validate the form before save task
