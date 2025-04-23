@@ -118,6 +118,8 @@ function resetFormTask() {
     document.getElementById("date").value = "";
     document.getElementById("time").value = "";
 
+    const saveTaskButton = document.getElementById("saveTaskButton");
+    saveTaskButton.disabled = true; 
 }
 
 function deleteTask(taskId) {

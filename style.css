@@ -5,7 +5,7 @@ html {
 
 body {
     background: #FFEFBA; 
-    background: linear-gradient(to right, #fbfae1, #FFEFBA); 
+    background: linear-gradient(to right bottom, #fbfae1, #FFEFBA); 
     font-family: 'Shadows Into Light', cursive;
     font-weight: 400;
     line-height: 1.6;
